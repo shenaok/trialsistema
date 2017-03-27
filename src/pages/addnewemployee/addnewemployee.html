@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> {{ PageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list inset>
+
+    <ion-item>
+      <ion-input type="text" placeholder="FirstName" [(ngModel)]="newEmployeeData.FirstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="LastName" [(ngModel)]="newEmployeeData.LastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Username" [(ngModel)]="newEmployeeData.Username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="newEmployeeData.Password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button block (click)="submitSave()"> SAVE </button>
+  </div>
+
+</ion-content>

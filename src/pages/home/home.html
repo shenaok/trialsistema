@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar [color]="royal">
+    <ion-title>Employee Data</ion-title>
+    <ion-buttons end>
+      <button ion-button color="royal" icon-only showWhen="ios,windows" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+        <button
+         class="add"
+         ion-button
+         item-right
+         icon-right
+         margin-bottom
+         color="primary"
+         (click)="addNewEmployee()">
+            Add New Employee
+            <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-list>
+
+  <ion-card *ngFor="let item of items" (click)="editEmployee(item)">
+
+    <ion-card-header>
+      {{ item.FirstName + ' ' + item.LastName}}
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ item.IsActive ? 'Active' : 'Inactive' }}
+    </ion-card-content>
+
+  </ion-card>
+
+
+   <!--<ion-item *ngFor="let item of items">
+      <h2>{{ item.FirstName }} </h2>
+      <h3>{{ item.LastName }} </h3>
+      <button
+         ion-button
+         color="primary"
+         item-right
+         (click)="viewEntry({ record: item })">View</button>
+   </ion-item>-->
+
+
+</ion-content>
